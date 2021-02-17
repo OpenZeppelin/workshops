@@ -1,0 +1,27 @@
+ul {
+  list-style-type: none;
+  padding-inline-start: 0;
+  max-width: fit-content;
+  margin: 1rem auto 3rem;
+}
+
+li {
+  color: #2C374B;
+}
+
+.address {
+  font-family: 'Courier New', Courier, monospace;
+  text-align: left;
+  margin-right: 1vmin;
+  color: #575C66;
+}
+
+.Registrations h3 {
+  text-align: center;
+  margin: 3rem 0 0;
+  color: #575C66;
+}
+
+.Registrations {
+  padding: 0 2rem;
+}

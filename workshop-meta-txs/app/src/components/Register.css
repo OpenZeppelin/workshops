@@ -1,0 +1,47 @@
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  flex-grow: 6;
+  border: 1px solid #D8DBE2;
+  box-sizing: border-box;
+  border-radius: 6px;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+}
+
+button {
+  width: 9rem;
+  background: #4E5DE4;
+  color: white;
+  font-weight: 500;
+  font-family: 'Nunito Sans', sans-serif;
+  text-transform: uppercase;
+  border: solid 1px #4E5DE4;
+  border-radius: .25rem;
+  padding: 1rem 1.5rem;
+  margin-left: .5rem;
+}
+
+button:hover {
+  background: #3442c4;
+  cursor: pointer;
+}
+
+.Container {
+  background: white;
+  border-radius: 1rem;
+  padding: 3rem;
+  box-shadow: 0px 8px 16px rgba(44, 55, 75, 0.16);
+  z-index: 2;
+  margin: 0 2rem;
+  margin-top: -4rem;
+}
+
+h4 {
+  margin: 0;
+  text-align: center;
+}
