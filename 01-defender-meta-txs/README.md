@@ -41,7 +41,7 @@ Expected `.env` file in `/app`:
 - `REACT_APP_WEBHOOK_URL`: Webhook of the Autotask to invoke for relaying meta-txs.
 - `REACT_APP_QUICKNODE_URL`: Optional URL to Quicknode for connecting to the xDAI network from the dapp.
 
-## Running the code
+## Run the code
 
 To run the workshop code yourself on the xDai network you will need to [sign up to Defender](https://defender.openzeppelin.com/) and [apply for mainnet access](https://openzeppelin.com/apply/), or change the code to use a public testnet.
 
