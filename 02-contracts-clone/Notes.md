@@ -6,3 +6,6 @@ UniswapV2
 
 Argent
 ---
+
+- [new wallet factory](https://etherscan.io/address/0x40c84310ef15b0c0e5c69d25138e0e16e8000fe9#code) with about 18900 wallets
+- [old wallet factory](https://etherscan.io/address/0x851cc731ce1613ae4fd8ec7f61f4b350f9ce1020#code) with about 17500 wallets

@@ -44,7 +44,7 @@ describe('Uniswap', function() {
   describe('Metrics', function() {
     it('display', async function() {
       logs.forEach(({ name, operation, gasUsed}, i) =>
-        console.log(`${String(i).padStart(3)} | ${name.padEnd(26)} | ${operation.padEnd(10)} | ${gasUsed.toString().padStart(10)} gas`)
+        console.log(`${String(i).padStart(3)} | ${name.padEnd(32)} | ${operation.padEnd(32)} | ${gasUsed.toString().padStart(10)} gas`)
       );
     });
   });
