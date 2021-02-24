@@ -4,8 +4,6 @@ async function deploy(name, ...params) {
 }
 
 describe('factories', function() {
-  const logs = [];
-
   for (const name of ['FactoryNaive', 'FactoryProxy', 'FactoryClone']) {
     describe(name, function() {
       before(async function() {
@@ -13,23 +11,12 @@ describe('factories', function() {
       });
 
       it('factory deployment cost', async function() {
-        const { gasUsed } = await this.factory.deployTransaction.wait();
-        logs.push({ name, operation: 'deployment', gasUsed });
+        await this.factory.deployTransaction.wait();
       });
 
       it('wallet deployment cost', async function() {
-        const tx = await this.factory.createWallet();
-        const { gasUsed } = await tx.wait();
-        logs.push({ name, operation: 'createWallet', gasUsed });
+        await this.factory.createWallet();
       });
     });
   }
-
-  describe('Metrics', function() {
-    it('display', async function() {
-      logs.forEach(({ name, operation, gasUsed}, i) =>
-        console.log(`${String(i).padStart(3)} | ${name.padEnd(32)} | ${operation.padEnd(32)} | ${gasUsed.toString().padStart(10)} gas`)
-      );
-    });
-  });
 });

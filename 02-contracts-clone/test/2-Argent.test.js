@@ -4,8 +4,6 @@ async function deploy(name, ...params) {
 }
 
 describe('Argent', function() {
-  const logs = [];
-
   before(async function () {
     this.implementation  = await deploy('BaseWallet');
     this.moduleRegistry  = await deploy('ModuleRegistry');
@@ -40,7 +38,7 @@ describe('Argent', function() {
       });
 
       it('create wallet', async function() {
-        const tx = await this.factory.createCounterfactualWallet(
+        await this.factory.createCounterfactualWallet(
           this.owner.address,
           this.versionmanager.address,
           this.guardian.address,
@@ -51,17 +49,7 @@ describe('Argent', function() {
           "0x",
           "0x",
         );
-        const { gasUsed } = await tx.wait();
-        logs.push({ name, operation: 'createCounterfactualWallet', gasUsed });
       });
     });
   }
-
-  describe('Metrics', function() {
-    it('display', async function() {
-      logs.forEach(({ name, operation, gasUsed}, i) =>
-        console.log(`${String(i).padStart(3)} | ${name.padEnd(32)} | ${operation.padEnd(32)} | ${gasUsed.toString().padStart(10)} gas`)
-      );
-    });
-  });
 });

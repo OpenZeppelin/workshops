@@ -26,6 +26,7 @@
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.1",
     "@nomiclabs/hardhat-waffle": "^2.0.1",
-    "hardhat": "^2.0.10"
+    "hardhat": "^2.0.10",
+    "hardhat-gas-reporter": "^1.0.4"
   }
 }

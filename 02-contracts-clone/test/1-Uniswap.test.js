@@ -4,8 +4,6 @@ async function deploy(name, ...params) {
 }
 
 describe('Uniswap', function() {
-  const logs = [];
-
   before(async function() {
     this.accounts = await ethers.getSigners();
   });
@@ -16,12 +14,10 @@ describe('Uniswap', function() {
     });
 
     it('create pair', async function() {
-      const tx = await this.factory.createPair(
+      await this.factory.createPair(
         this.accounts[1].address,
         this.accounts[2].address,
       );
-      const { gasUsed } = await tx.wait();
-      logs.push({ name: 'UniswapV2Factory', operation: 'createPair', gasUsed });
     });
   });
 
@@ -32,19 +28,9 @@ describe('Uniswap', function() {
     });
 
     it('create pair', async function() {
-      const tx = await this.factory.createPair(
+      await this.factory.createPair(
         this.accounts[1].address,
         this.accounts[2].address,
-      );
-      const { gasUsed } = await tx.wait();
-      logs.push({ name: 'UniswapV2FactoryClones', operation: 'createPair', gasUsed });
-    });
-  });
-
-  describe('Metrics', function() {
-    it('display', async function() {
-      logs.forEach(({ name, operation, gasUsed}, i) =>
-        console.log(`${String(i).padStart(3)} | ${name.padEnd(32)} | ${operation.padEnd(32)} | ${gasUsed.toString().padStart(10)} gas`)
       );
     });
   });
