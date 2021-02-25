@@ -8,9 +8,9 @@ The gas report produced by the tests shows the gas savings one can expect from u
 
 ## Structure
 
-- `contracts/1-uniswap`: Fork of [uniswap](https://uniswap.org/)'s `UniswapV2Factory` that uses EIP-1167 clones to deploy `UniswapV2Pair`
-- `contracts/2-argent`: Fork of [argent](https://www.argent.xyz/)'s `WalletFactory` that uses EIP-1167 clones to deploy `WalletProxy`
-- `contracts/3-MinimalSmartWallet`: Comparison of three different deployment mechanisms for a minimal smart wallet.
+- `contracts/1-ERC20`: Comparison of three different deployment mechanisms for ERC20 tokens.
+- `contracts/2-uniswap`: Fork of [uniswap](https://uniswap.org/)'s `UniswapV2Factory` that uses EIP-1167 clones to deploy `UniswapV2Pair`
+- `contracts/3-argent`: Fork of [argent](https://www.argent.xyz/)'s `WalletFactory` that uses EIP-1167 clones to deploy `WalletProxy`
 - `test`: Tests for contracts.
 - `hardhart.config.js`: Hardhat configuration, including compiler optimization options.
 
@@ -21,7 +21,27 @@ The gas report produced by the tests shows the gas savings one can expect from u
 
 ## Examples
 
-1. **UniswapV2**
+1. **ERC20**
+
+  - Description:
+
+    In this example, we deploy ERC20 using different mechanisms. This allows us to compare the deployment and usage costs associated with the different deployment patterns.
+
+  - Gas report:
+
+    | Contract     | Methods        | Gas       |
+    | ------------ | -------------- | --------: |
+    | FactoryNaive | constructor    | 1,245,959 |
+    | FactoryProxy | constructor    | 1,675,235 |
+    | FactoryClone | constructor    | 1,305,848 |
+    | FactoryNaive | createToken    | 1,179,977 |
+    | FactoryProxy | createToken    |   368,401 |
+    | FactoryClone | createToken    |   209,109 |
+    | FactoryNaive | ERC20.transfer |    51,092 |
+    | FactoryProxy | ERC20.transfer |    52,776 |
+    | FactoryClone | ERC20.transfer |    51,870 |
+
+2. **UniswapV2**
 
   - Description:
 
@@ -48,7 +68,7 @@ The gas report produced by the tests shows the gas savings one can expect from u
     - [UniswapV2Factory](https://etherscan.io/address/0x5c69bee701ef814a2b6a3edd4b1652cb9cc5aa6f#code)
     - [UniswapV2Pair for DAI/WETH](https://etherscan.io/address/0xa478c2975ab1ea89e8196811f51a7b7ade33eb11#code)
 
-2. **Argent**
+3. **Argent**
 
   - Description:
 
@@ -66,20 +86,3 @@ The gas report produced by the tests shows the gas savings one can expect from u
   - Relevant contracts:
     - [WalletFactory (new with about 18.9k wallets)](https://etherscan.io/address/0x40c84310ef15b0c0e5c69d25138e0e16e8000fe9#code)
     - [WalletFactory (old with about 17.5k wallets)](https://etherscan.io/address/0x851cc731ce1613ae4fd8ec7f61f4b350f9ce1020#code)
-
-3. **MinimalSmartWallet**
-
-  - Description:
-
-    In this example, we design a very simple, minimalistic, smart-wallet and factories to deploy them. This allows us to compare the cost associated with the different deployment patterns.
-
-  - Gas report:
-
-    | Contract     | Methods      | Gas       |
-    | ------------ | ------------ | --------: |
-    | FactoryNaive | constructor  |   730,244 |
-    | FactoryProxy | constructor  | 1,154,846 |
-    | FactoryClone | constructor  |   789,755 |
-    | FactoryNaive | createWallet |   672,929 |
-    | FactoryProxy | createWallet |   279,530 |
-    | FactoryClone | createWallet |   121,843 |
