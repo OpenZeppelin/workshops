@@ -32,10 +32,11 @@ The gas report produced by the tests shows the gas savings one can expect from u
     Anyone can create a uniswap pair contract for any ERC20s he desires. However, this operation has a significant gas cost associated with deploying and configuring the pair contract. This operation can be made cheaper using EIP-1167 clones instead of full-fledged contracts.
 
   - Gas report:
-| Contract               | Methods    | Gas       |
-| ---------------------- | ---------- | --------: |
-| UniswapV2Factory       | createPair | 2,020,039 |
-| UniswapV2FactoryClones | createPair |   218,099 |
+
+    | Contract               | Methods    | Gas       |
+    | ---------------------- | ---------- | --------: |
+    | UniswapV2Factory       | createPair | 2,020,039 |
+    | UniswapV2FactoryClones | createPair |   218,099 |
 
   - Comment:
 
@@ -56,10 +57,11 @@ The gas report produced by the tests shows the gas savings one can expect from u
     Each argent user has a dedicated smart-wallet that they control through meta-transactions. One of the consequences of this design is that onboarding new users requires deploying a smart contract for them. Argent already uses proxies to reduce the cost of new wallet creation, but they could go even further using EIP-1167 clones.
 
   - Gas report:
-| Contract            | Methods                    | Gas     |
-| ------------------- | -------------------------- | ------: |
-| WalletFactory       | createCounterfactualWallet | 322,302 |
-| WalletFactoryClones | createCounterfactualWallet | 265,422 |
+
+    | Contract            | Methods                    | Gas     |
+    | ------------------- | -------------------------- | ------: |
+    | WalletFactory       | createCounterfactualWallet | 322,302 |
+    | WalletFactoryClones | createCounterfactualWallet | 265,422 |
 
   - Relevant contracts:
     - [WalletFactory (new with about 18.9k wallets)](https://etherscan.io/address/0x40c84310ef15b0c0e5c69d25138e0e16e8000fe9#code)
@@ -72,11 +74,12 @@ The gas report produced by the tests shows the gas savings one can expect from u
     In this example, we design a very simple, minimalistic, smart-wallet and factories to deploy them. This allows us to compare the cost associated with the different deployment patterns.
 
   - Gas report:
-| Contract     | Methods      | Gas       |
-| ------------ | ------------ | --------: |
-| FactoryNaive | constructor  |   730,244 |
-| FactoryProxy | constructor  | 1,154,846 |
-| FactoryClone | constructor  |   789,755 |
-| FactoryNaive | createWallet |   672,929 |
-| FactoryProxy | createWallet |   279,530 |
-| FactoryClone | createWallet |   121,843 |
+
+    | Contract     | Methods      | Gas       |
+    | ------------ | ------------ | --------: |
+    | FactoryNaive | constructor  |   730,244 |
+    | FactoryProxy | constructor  | 1,154,846 |
+    | FactoryClone | constructor  |   789,755 |
+    | FactoryNaive | createWallet |   672,929 |
+    | FactoryProxy | createWallet |   279,530 |
+    | FactoryClone | createWallet |   121,843 |
