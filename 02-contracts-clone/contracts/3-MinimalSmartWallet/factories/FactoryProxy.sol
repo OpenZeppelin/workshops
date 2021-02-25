@@ -6,15 +6,15 @@ import "@openzeppelin/contracts/proxy/UpgradeableProxy.sol";
 import "../MinimalSmartWallet.sol";
 
 contract FactoryProxy {
-    address immutable model;
+    address immutable walletImplementation;
 
     constructor() public {
-        model = address(new MinimalSmartWallet());
+        walletImplementation = address(new MinimalSmartWallet());
     }
 
     function createWallet() external returns (address) {
         UpgradeableProxy proxy = new UpgradeableProxy(
-            model,
+            walletImplementation,
             abi.encodeWithSelector(MinimalSmartWallet(0).initialize.selector, msg.sender)
         );
         return address(proxy);

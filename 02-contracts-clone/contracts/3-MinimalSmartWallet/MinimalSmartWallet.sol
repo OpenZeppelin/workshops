@@ -9,6 +9,7 @@ contract MinimalSmartWallet is OwnableUpgradeable {
     receive() external payable {}
 
     function initialize(address owner) external {
+        require(OwnableUpgradeable.owner() == address(0));
         __Ownable_init();
         transferOwnership(owner);
     }

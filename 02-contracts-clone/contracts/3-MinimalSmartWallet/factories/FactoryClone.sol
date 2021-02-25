@@ -6,14 +6,14 @@ import "@openzeppelin/contracts/proxy/Clones.sol";
 import "../MinimalSmartWallet.sol";
 
 contract FactoryClone {
-    address immutable model;
+    address immutable walletImplementation;
 
     constructor() public {
-        model = address(new MinimalSmartWallet());
+        walletImplementation = address(new MinimalSmartWallet());
     }
 
     function createWallet() external returns (address) {
-        address clone = Clones.clone(model);
+        address clone = Clones.clone(walletImplementation);
         MinimalSmartWallet(payable(clone)).initialize(msg.sender);
         return clone;
     }
