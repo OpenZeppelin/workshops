@@ -1,5 +1,5 @@
 # OpenZeppelin Workshops
-Code used in OpenZeppelin Workshops.
+Code and slides used in OpenZeppelin Workshops.
 
 ## Upcoming Events
 OpenZeppelin run regular workshops and webinars, including on OpenZeppelin Defender and OpenZeppelin Contracts.
