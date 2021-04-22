@@ -13,8 +13,3 @@ contract BoxV2 is Box {
         return "2.0.0";
     }
 }
-
-
-
-
-
