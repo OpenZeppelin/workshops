@@ -29,5 +29,3 @@ contract Box is Initializable {
         return "1.0.0";
     }
 }
-
-
