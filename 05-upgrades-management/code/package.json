@@ -1,0 +1,15 @@
+{
+  "name": "hardhat-project",
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.2",
+    "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "@openzeppelin/contracts-upgradeable": "^4.0.0",
+    "@openzeppelin/hardhat-defender": "^1.4.3",
+    "@openzeppelin/hardhat-upgrades": "^1.6.0",
+    "chai": "^4.3.4",
+    "dotenv": "^8.2.0",
+    "ethereum-waffle": "^3.3.0",
+    "ethers": "^5.1.3",
+    "hardhat": "^2.2.0"
+  }
+}
