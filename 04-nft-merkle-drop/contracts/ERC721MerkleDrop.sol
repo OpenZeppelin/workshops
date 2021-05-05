@@ -17,7 +17,7 @@ contract ERC721MerkleDrop is ERC721 {
     external
     {
         require(_verify(_leaf(account, tokenId), proof), "Invalid merkle proof");
-        _mint(account, tokenId);
+        _safeMint(account, tokenId);
     }
 
     function _leaf(address account, uint256 tokenId)

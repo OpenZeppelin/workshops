@@ -24,7 +24,7 @@ contract ERC721LazyMintWith712SignatureChecker is ERC721, EIP712, AccessControl 
     external
     {
         require(_verify(signer, _hash(account, tokenId), signature), "Invalid signature");
-        _mint(account, tokenId);
+        _safeMint(account, tokenId);
     }
 
     function _hash(address account, uint256 tokenId)

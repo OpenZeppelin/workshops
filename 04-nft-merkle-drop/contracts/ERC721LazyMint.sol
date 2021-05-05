@@ -22,7 +22,7 @@ contract ERC721LazyMint is ERC721, AccessControl {
     external
     {
         require(_verify(_hash(account, tokenId), signature), "Invalid signature");
-        _mint(account, tokenId);
+        _safeMint(account, tokenId);
     }
 
     function _hash(address account, uint256 tokenId)
