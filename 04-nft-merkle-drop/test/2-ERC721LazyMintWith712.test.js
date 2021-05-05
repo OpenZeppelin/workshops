@@ -8,7 +8,7 @@ async function deploy(name, ...params) {
 }
 
 
-describe('ERC721MerkleDrop', function () {
+describe('ERC721LazyMintWith712', function () {
   before(async function() {
     this.accounts = await ethers.getSigners();
     ({ chainId: this.chainId } = await ethers.provider.getNetwork());

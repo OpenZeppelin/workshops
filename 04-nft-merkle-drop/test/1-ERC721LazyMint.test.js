@@ -12,7 +12,7 @@ function hashToken(tokenId, account) {
 }
 
 
-describe('ERC721MerkleDrop', function () {
+describe('ERC721LazyMint', function () {
   before(async function() {
     this.accounts = await ethers.getSigners();
   });
