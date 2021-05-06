@@ -22,6 +22,9 @@ describe('ERC721LazyMintWith712', function () {
 
     for (const [tokenId, account] of Object.entries(tokens)) {
       it('element', async function () {
+        /**
+         * Account[1] (minter) creates signature
+         */
         const signature = await this.accounts[1]._signTypedData(
           // Domain
           {
@@ -40,7 +43,10 @@ describe('ERC721LazyMintWith712', function () {
           // Value
           { tokenId, account },
         );
-        await expect(this.registry.redeem(account, tokenId, signature))
+        /**
+         * Account[2] (anyone?) redeems token using signature
+         */
+        await expect(this.registry.connect(this.accounts[2]).redeem(account, tokenId, signature))
           .to.emit(this.registry, 'Transfer')
           .withArgs(ethers.constants.AddressZero, account, tokenId);
       });

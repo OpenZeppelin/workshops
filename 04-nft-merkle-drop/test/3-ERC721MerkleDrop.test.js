@@ -27,7 +27,13 @@ describe('ERC721MerkleDrop', function () {
 
     for (const [tokenId, account] of Object.entries(tokens)) {
       it('element', async function () {
+        /**
+         * Create merkle proof (anyone with knowledge of the merkle tree)
+         */
         const proof = this.merkleTree.getHexProof(hashToken(tokenId, account));
+        /**
+         * Redeems token using merkle proof (anyone with the proof)
+         */
         await expect(this.registry.redeem(account, tokenId, proof))
           .to.emit(this.registry, 'Transfer')
           .withArgs(ethers.constants.AddressZero, account, tokenId);
