@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "src/index.js",
   "scripts": {
-    "start": "node src/index.js"
+    "start": "node bin/local.js"
   },
   "author": "Santiago Palladino <santiago@openzeppelin.com>",
   "license": "MIT",
