@@ -23,7 +23,6 @@ async function sendMetaTx(registry, provider, signer, name) {
     method: 'POST',
     body: JSON.stringify(request),
     headers: { 'Content-Type': 'application/json' },
-    mode: 'no-cors',
   });
 }
 
