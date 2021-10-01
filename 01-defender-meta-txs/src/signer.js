@@ -23,7 +23,7 @@ function getMetaTxTypeData(chainId, verifyingContract) {
       ForwardRequest,
     },
     domain: {
-      name: 'GSNv2 Forwarder',
+      name: 'MinimalForwarder',
       version: '0.0.1',
       chainId,
       verifyingContract,
