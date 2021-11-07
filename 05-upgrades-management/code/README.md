@@ -10,6 +10,8 @@ Check out this folder to your local environment, and run:
 
 `npm install`
 
+`npm update`
+
 ## Configuring
 
 All necessary configuration variables are sourced through a `.env` file at the root level of this folder. 
