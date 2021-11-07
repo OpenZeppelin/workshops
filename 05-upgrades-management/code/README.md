@@ -17,7 +17,7 @@ All necessary configuration variables are sourced through a `.env` file at the r
 Create a `.env` file and make sure it defines the env required variables. Your `.env` should look like this:
 
 ```
-MNEMONIC=<your Ethereum development account mnemonic>
+MNEMONIC=<your Ethereum development account private key>
 INFURA_API_KEY=<key to an Infura project under your control>
 DEFENDER_TEAM_API_KEY=<Defender API key with permissions to interact with Admin>
 DEFENDER_TEAM_API_SECRET_KEY=<secret key corresponding to the team API key above>
