@@ -2,7 +2,7 @@
 
 This folder contains the code used during the Managing Smart Contract Upgrades Workshop we led in Apr 22nd, 2021.
 
-It is a Hardhat project, with some iterations on a simple `Box` contract, and a handful of Hardhat scripts to manage its upgrades. 
+It is a Hardhat project, with some iterations on a simple `Box` contract, and a handful of Hardhat scripts to manage its upgrades.
 
 ## Installing
 
@@ -10,11 +10,9 @@ Check out this folder to your local environment, and run:
 
 `npm install`
 
-`npm update`
-
 ## Configuring
 
-All necessary configuration variables are sourced through a `.env` file at the root level of this folder. 
+All necessary configuration variables are sourced through a `.env` file at the root level of this folder.
 
 Create a `.env` file and make sure it defines the env required variables. Your `.env` should look like this:
 
