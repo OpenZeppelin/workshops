@@ -2,7 +2,7 @@
 
 This folder contains the code used during the Managing Smart Contract Upgrades Workshop we led in Apr 22nd, 2021.
 
-It is a Hardhat project, with some iterations on a simple `Box` contract, and a handful of Hardhat scripts to manage its upgrades. 
+It is a Hardhat project, with some iterations on a simple `Box` contract, and a handful of Hardhat scripts to manage its upgrades.
 
 ## Installing
 
@@ -12,12 +12,12 @@ Check out this folder to your local environment, and run:
 
 ## Configuring
 
-All necessary configuration variables are sourced through a `.env` file at the root level of this folder. 
+All necessary configuration variables are sourced through a `.env` file at the root level of this folder.
 
 Create a `.env` file and make sure it defines the env required variables. Your `.env` should look like this:
 
 ```
-MNEMONIC=<your Ethereum development account mnemonic>
+MNEMONIC=<your Ethereum development account private key>
 INFURA_API_KEY=<key to an Infura project under your control>
 DEFENDER_TEAM_API_KEY=<Defender API key with permissions to interact with Admin>
 DEFENDER_TEAM_API_SECRET_KEY=<secret key corresponding to the team API key above>
