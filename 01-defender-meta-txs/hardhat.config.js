@@ -23,6 +23,10 @@ module.exports = {
     xdai: {
       url: 'https://dai.poa.network',
       accounts: [process.env.PRIVATE_KEY],
+    },
+    mumbai: {
+      url: 'https://matic-mumbai.chainstacklabs.com',
+      accounts: [process.env.PRIVATE_KEY],
     }
   }
 };
