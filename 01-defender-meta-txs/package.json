@@ -10,6 +10,7 @@
     "deploy": "hardhat run scripts/deploy.js --network xdai",
     "sign": "hardhat run scripts/sign.js --network xdai",
     "events": "hardhat run scripts/events.js --network xdai",
+    "verify": "hardhat run scripts/verify.js --network xdai",
     "build": "rollup -c",
     "invoke": "bash ./scripts/invoke.sh",
     "upload": "yarn build && node scripts/upload.js",
