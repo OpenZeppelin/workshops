@@ -34,6 +34,7 @@
     "chai-as-promised": "^7.1.1",
     "create-react-app": "^4.0.2",
     "defender-autotask-client": "^1.25.0",
+    "defender-relay-client": "^1.26.1",
     "dotenv": "^8.2.0",
     "ethereum-waffle": "^3.2.2",
     "ethers": "^5.0.30",
@@ -41,7 +42,6 @@
     "rollup": "^2.38.5"
   },
   "dependencies": {
-    "defender-relay-client": "^1.26.1",
     "eth-sig-util": "^3.0.1"
   }
 }

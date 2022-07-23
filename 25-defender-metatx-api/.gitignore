@@ -6,6 +6,5 @@ deploy.*.json
 tmp
 build
 .env
-.env.relay
 relay.json
 autotask.json

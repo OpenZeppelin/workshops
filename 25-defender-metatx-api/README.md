@@ -10,7 +10,7 @@ Live demo running at [defender-metatx-workshop-demo.openzeppelin.com](https://de
 
 [Video tutorial]()
 
-[Written tutorial]()
+[Written guide]()
 
 ## Structure
 
@@ -87,7 +87,7 @@ Create a relayer using [Defender Relay Client](https://docs.openzeppelin.com/def
 $ yarn create-relay
 ```
 
-This runs a script that creates a relayer and stores the relayer API key and API secret in the projects `.env.relay` file.
+This runs a script that creates a relayer and stores the relayer API key and API secret in the projects `.env` file.
 
 Sign a request to register a name, this will create a request in `tmp/request.json` that we can then view
 
