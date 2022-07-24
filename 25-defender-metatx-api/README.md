@@ -10,7 +10,7 @@ Live demo running at [defender-metatx-workshop-demo.openzeppelin.com](https://de
 
 [Video tutorial]()
 
-[Written guide]()
+[Written guide](https://docs.openzeppelin.com/defender/guide-metatx)
 
 ## Structure
 
@@ -71,14 +71,6 @@ TEAM_API_SECRET="Defender Team API secret"
 
 Store the value of a new private key in our projects `.env` file.
 
-### Deploy contracts
-
-Deploy the MinimalForwarder and Registry contracts to Goerli
-
-```js
-$ yarn deploy
-```
-
 ### Create Relayer
 
 Create a relayer using [Defender Relay Client](https://docs.openzeppelin.com/defender/relay-api-reference) on Goerli.
@@ -88,6 +80,16 @@ $ yarn create-relay
 ```
 
 This runs a script that creates a relayer and stores the relayer API key and API secret in the projects `.env` file.
+
+### Deploy contracts
+
+Use the newly created Relayer to deploy the MinimalForwarder and Registry contracts to Goerli
+
+```js
+$ yarn deploy
+```
+
+### Sign Using Relayer
 
 Sign a request to register a name, this will create a request in `tmp/request.json` that we can then view
 
@@ -113,15 +115,7 @@ $ yarn create-autotask
 
 This creates the autotask, saves the Autotask ID to the .env file [AUTO_TASK_ID]), and uploads the autotask code.
 
-We can sign another name for the registry and then send a request to the Autotask webhook to relay and finally view the registry.
-
 Grab the Autotask webhook from the web app and store in the apps `.env` file (in the `app` directory).
-
-```js
-$ NAME=alice yarn sign
-$ curl -XPOST 'Your Autotask Webhook URI goes here' -H 'Content-type: application/json' -d '@tmp/request.json'
-$ yarn events
-```
 
 ### Run app
 
