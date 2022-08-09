@@ -8,7 +8,7 @@ This code is a revised version of [Workshop 01](https://github.com/OpenZeppelin/
 
 Live demo running at [defender-metatx-workshop-demo.openzeppelin.com](https://defender-metatx-workshop-demo.openzeppelin.com/).
 
-[Video tutorial]()
+[Video tutorial](https://youtu.be/Bhz5LJbq9YY)
 
 [Written guide](https://docs.openzeppelin.com/defender/guide-metatx)
 
