@@ -1,0 +1,10 @@
+node_modules
+artifacts
+cache
+deploy.*.json
+/.env
+tmp
+build
+.env
+relay.json
+autotask.json

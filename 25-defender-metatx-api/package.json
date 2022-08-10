@@ -1,0 +1,47 @@
+{
+  "name": "workshop-meta-txs",
+  "version": "1.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "local:start": "hardhat node",
+    "local:deploy": "hardhat run scripts/deploy.js --network local",
+    "local:sign": "hardhat run scripts/sign.js --network local",
+    "create-relay": "node scripts/createRelay.js",
+    "deploy": "node scripts/deploy.js",
+    "sign": "hardhat run scripts/sign.js --network goerli",
+    "events": "hardhat run scripts/events.js --network goerli",
+    "verify": "hardhat run scripts/verify.js --network goerli",
+    "build": "rollup -c",
+    "invoke": "bash ./scripts/invoke.sh",
+    "create-autotask": "yarn build && node scripts/createAutotask.js",
+    "upload": "yarn build && node scripts/upload.js",
+    "relay": "node scripts/relay.js",
+    "test": "NODE_ENV=test hardhat test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.1",
+    "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "@openzeppelin/contracts": "^4.4.1",
+    "@rollup/plugin-commonjs": "^17.1.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^11.1.1",
+    "builtin-modules": "^3.2.0",
+    "chai": "^4.3.0",
+    "chai-as-promised": "^7.1.1",
+    "create-react-app": "^4.0.2",
+    "defender-autotask-client": "^1.25.0",
+    "defender-relay-client": "^1.26.1",
+    "dotenv": "^8.2.0",
+    "ethereum-waffle": "^3.2.2",
+    "ethers": "^5.0.30",
+    "hardhat": "^2.0.8",
+    "rollup": "^2.38.5"
+  },
+  "dependencies": {
+    "eth-sig-util": "^3.0.1"
+  }
+}
