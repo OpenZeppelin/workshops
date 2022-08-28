@@ -54,7 +54,7 @@ To run the workshop code yourself you will need to [sign up to Defender](https:/
 First fork the repository and then Git Clone your fork to your computer and install dependencies
 
 ```js
-$ git clone https://github.com/[GitHub username]/workshops.git
+$ git clone https://github.com/OpenZeppelin/workshops.git
 $ cd workshops/25-defender-metatx-api/
 $ yarn
 ```
