@@ -50,7 +50,7 @@ To run the workshop code yourself on the xDai network you will need to [sign up 
 First fork the repository and then Git Clone your fork to your computer and install dependencies
 
 ```js
-$ git clone https://github.com/[GitHub username]/workshops.git
+$ git clone https://github.com/OpenZeppelin/workshops.git
 $ cd workshops/01-defender-meta-txs/
 $ yarn
 ```
