@@ -17,7 +17,15 @@ async function sendMetaTx(registry, provider, signer, name) {
   const data = registry.interface.encodeFunctionData('register', [name]);
   const to = registry.address;
   
-  const request = await signMetaTxRequest(signer.provider, forwarder, { to, from, data });
+ const request = await signMetaTxRequest(
+    signer.provider,
+    forwarder.connect(signer),
+    {
+      to,
+      from,
+      data,
+    }
+  );
 
   return fetch(url, {
     method: 'POST',
