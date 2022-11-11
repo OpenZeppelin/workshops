@@ -1,7 +1,0 @@
-/node_modules
-/cache
-/build
-/artifacts
-/.env
-/*.log
-.openzeppelin/unknown-31337.json
