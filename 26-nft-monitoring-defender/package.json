@@ -1,0 +1,42 @@
+{
+  "name": "nft-monitoring-workshop",
+  "version": "1.0",
+  "description": "ETHCC 2023 NFT Monitoring Workshop",
+  "contributors": [
+    {
+      "name": "Morgan Weaver",
+      "email": "morgan.weaver@openzeppelin.com"
+    }
+  ],
+  "devDependencies": {
+    "@ethersproject/abi": "^5.7.0",
+    "@ethersproject/providers": "^5.7.2",
+    "@nomicfoundation/hardhat-chai-matchers": "^1.0.5",
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.7",
+    "@nomicfoundation/hardhat-toolbox": "^2.0.0",
+    "@nomicfoundation/hardhat-verify": "^1.0.3",
+    "@nomiclabs/hardhat-ethers": "^2.2.1",
+    "@nomiclabs/hardhat-etherscan": "^3.1.4",
+    "@openzeppelin/contracts": "^4.8.3",
+    "@typechain/ethers-v5": "^10.2.1",
+    "@typechain/hardhat": "^6.1.6",
+    "chai": "^4.3.7",
+    "eslint": "^8.23.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "ethers": "^5.7.2",
+    "hardhat": "^2.12.5",
+    "hardhat-contract-sizer": "^2.10.0",
+    "hardhat-gas-reporter": "^1.0.9",
+    "prettier": "^2.7.1",
+    "ts-node": "^10.9.1",
+    "typechain": "^8.2.0",
+    "typescript": "^5.1.6"
+  },
+  "overrides": {
+    "semver": "~7.5.2"
+  },
+  "dependencies": {
+    "@openzeppelin/defender-serverless": "^1.2.1"
+  }
+}
