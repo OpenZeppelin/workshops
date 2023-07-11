@@ -5,6 +5,8 @@ node_modules
 typechain
 typechain-types
 secrets.yml
+deployment-log.nft_monitoring.json
+generated-service.zip
 
 #Hardhat files
 artifacts
