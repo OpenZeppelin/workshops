@@ -20,6 +20,7 @@
     "@openzeppelin/contracts": "^4.8.3",
     "@typechain/ethers-v5": "^10.2.1",
     "@typechain/hardhat": "^6.1.6",
+    "@types/mocha": "^10.0.1",
     "chai": "^4.3.7",
     "eslint": "^8.23.0",
     "eslint-config-prettier": "^8.6.0",
@@ -29,6 +30,7 @@
     "hardhat-contract-sizer": "^2.10.0",
     "hardhat-gas-reporter": "^1.0.9",
     "prettier": "^2.7.1",
+    "solidity-coverage": "^0.8.4",
     "ts-node": "^10.9.1",
     "typechain": "^8.2.0",
     "typescript": "^5.1.6"
