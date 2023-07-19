@@ -65,7 +65,7 @@ resources:
         confirm-level: 1
         addresses:
           - ${self:resources.Resources.contracts.contract-1.address}
-        abi: ${resources.Resources.contracts.contract-1.abi}
+        abi: ${self:custom.contractJSON.abi}
         network: 'goerli'
         paused: false
         autotask-trigger: ${self:functions.autotask-1}
