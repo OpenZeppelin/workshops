@@ -10,8 +10,7 @@ provider:
 
 custom:
   config: ${file(../secrets.yml)}
-  # TODO: change the below contract name to your own
-  contractJSON: ${file(../artifacts/contracts/NFT.sol/<CONTRACT_NAME>.json)}
+  contractJSON: ${file(../artifacts/contracts/NFT.sol/ChinchillaToken.json)}
 
   # Configure this section and rename secret-example.yml to secrets.yml
   name: NFT Monitoring Workshop
@@ -38,8 +37,9 @@ resources:
     contracts:
         contract-1:
         # TODO: Change these properties to your own
-          name: <'Your_Contract_Name'>
-          address: <0xYour_Contract_Address>
+          name: 'Chinchilla Token'
+        # NOTE: Address should be in 'single quotes'
+          address: '0x6Fa910cc60Bc5978E75068Ea3C839F1e22c5E1dF'
           network: 'goerli' # or Sepolia, etc. 
           abi: ${self:custom.contractJSON.abi}
     relayers:
@@ -50,8 +50,7 @@ resources:
     notifications:
         email:
           type: email
-          # TODO: Add your name
-          name: <YOUR_NAME>
+          name: Morgan-test
           config:
             emails:
               - ${self:custom.defenderSecrets.alertEmail}
@@ -60,7 +59,7 @@ resources:
       stack: ${self:custom.defenderSecrets}
     sentinels:
       sentinel-1:
-        name: '${self:custom.name} Sentinel'
+        name: ${self:custom.name} Sentinel
         type: 'BLOCK'
         confirm-level: 1
         addresses:
