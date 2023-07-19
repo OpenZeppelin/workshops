@@ -10,7 +10,8 @@ provider:
 
 custom:
   config: ${file(../secrets.yml)}
-  contractJSON: ${file(../artifacts/contracts/<NFT_FILE_NAME>.sol/CONTRACT_NAME.json)}
+  # TODO: change the below contract name to your own
+  contractJSON: ${file(../artifacts/contracts/NFT.sol/<CONTRACT_NAME>.json)}
 
   # Configure this section and rename secret-example.yml to secrets.yml
   name: NFT Monitoring Workshop
@@ -49,6 +50,7 @@ resources:
     notifications:
         email:
           type: email
+          # TODO: Add your name
           name: <YOUR_NAME>
           config:
             emails:
