@@ -27,6 +27,7 @@ defender:
 functions:
   autotask-1:
     name: ${self:custom.name} Autotask
+    relayer: ${self:resources.Resources.relayers.relayer-1}
     path: autotask-1
     trigger:
       type: schedule
