@@ -18,7 +18,7 @@ function Register() {
       const response = await registerName(registry, provider, name);
       const hash = response.hash;
       const onClick = hash
-        ? () => window.open(`https://goerli.etherscan.io/tx/${hash}`)
+        ? () => window.open(`https://sepolia.etherscan.io/tx/${hash}`)
         : undefined;
       toast('Transaction sent!', { type: 'info', onClick });
       nameInput.current.value = '';

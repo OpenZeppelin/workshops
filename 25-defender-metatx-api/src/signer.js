@@ -23,7 +23,7 @@ function getMetaTxTypeData(chainId, verifyingContract) {
       ForwardRequest,
     },
     domain: {
-      name: 'MinimalForwarder',
+      name: 'ERC2771Forwarder',
       version: '0.0.1',
       chainId,
       verifyingContract,

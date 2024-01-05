@@ -8,7 +8,7 @@ function getInstance(name) {
 }
 
 async function main() {
-  const forwarder = await getInstance('MinimalForwarder');
+  const forwarder = await getInstance('ERC2771Forwarder');
   console.log(`Testing request tmp/request.json on forwarder at ${forwarder.address}...`);
   const { request, signature } = JSON.parse(readFileSync('tmp/request.json'));
 

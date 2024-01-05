@@ -1,4 +1,4 @@
-const { handler } = require('../autotasks/relay/')
+const { handler } = require('../actions/relay/')
 
 // Run autotask code locally using the Relayer API key and secret
 if (require.main === module) {

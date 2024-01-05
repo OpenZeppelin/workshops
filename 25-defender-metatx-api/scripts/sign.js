@@ -11,7 +11,7 @@ function getInstance(name) {
 }
 
 async function main() {
-  const forwarder = await getInstance('MinimalForwarder');
+  const forwarder = await getInstance('ERC2771Forwarder');
   const registry = await getInstance("Registry");
 
   const { NAME: name, PRIVATE_KEY: signer } = process.env;

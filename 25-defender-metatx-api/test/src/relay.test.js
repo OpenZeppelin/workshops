@@ -1,16 +1,16 @@
 const { expect } = require("chai").use(require('chai-as-promised'));
 const { ethers } = require("hardhat");
 const { signMetaTxRequest } = require("../../src/signer");
-const { relay } = require('../../autotasks/relay');
+const { relay } = require('../../actions/relay');
 
 async function deploy(name, ...params) {
   const Contract = await ethers.getContractFactory(name);
   return await Contract.deploy(...params).then(f => f.deployed());
 }
 
-describe("autotasks/relay", function() {
+describe("actions/relay", function() {
   beforeEach(async function() {
-    this.forwarder = await deploy('MinimalForwarder');
+    this.forwarder = await deploy('ERC2771Forwarder');
     this.registry = await deploy("Registry", this.forwarder.address);    
     this.accounts = await ethers.getSigners();
     this.signer = this.accounts[2];

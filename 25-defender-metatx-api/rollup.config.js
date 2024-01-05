@@ -4,7 +4,7 @@ import json from '@rollup/plugin-json';
 import builtins from 'builtin-modules';
 
 export default {
-  input: 'autotasks/relay/index.js',
+  input: 'actions/relay/index.js',
   output: {
     file: 'build/relay/index.js',
     format: 'cjs',

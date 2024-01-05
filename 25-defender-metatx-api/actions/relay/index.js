@@ -2,7 +2,7 @@ const ethers = require('ethers');
 const { DefenderRelaySigner, DefenderRelayProvider } = require('defender-relay-client/lib/ethers');
 
 const { ForwarderAbi } = require('../../src/forwarder');
-const ForwarderAddress = require('../../deploy.json').MinimalForwarder;
+const ForwarderAddress = require('../../deploy.json').ERC2771Forwarder;
 const RegistryAddress = require('../../deploy.json').Registry;
 
 async function relay(forwarder, request, signature, whitelist) {

@@ -12,7 +12,7 @@ async function main() {
   const events = await registry.queryFilter(registry.filters.Registered());
   console.log('Registrations')
   console.log('=============')
-  console.log(events.map(e => `[${e.blockNumber}] https://goerli.etherscan.io/address/${e.args.who} => ${e.args.name}`).join('\n'));
+  console.log(events.map(e => `[${e.blockNumber}] https://sepolia.etherscan.io/address/${e.args.who} => ${e.args.name}`).join('\n'));
   console.log();
 }
 

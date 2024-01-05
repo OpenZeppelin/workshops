@@ -16,7 +16,7 @@ async function main() {
     speed: 'fast',
   })
 
-  const Forwarder = await ethers.getContractFactory('MinimalForwarder')
+  const Forwarder = await ethers.getContractFactory('ERC2771Forwarder')
   const forwarder = await Forwarder.connect(relaySigner)
     .deploy()
     .then((f) => f.deployed())
@@ -30,7 +30,7 @@ async function main() {
     'deploy.json',
     JSON.stringify(
       {
-        MinimalForwarder: forwarder.address,
+        ERC2771Forwarder: forwarder.address,
         Registry: registry.address,
       },
       null,
@@ -39,7 +39,7 @@ async function main() {
   )
 
   console.log(
-    `MinimalForwarder: ${forwarder.address}\nRegistry: ${registry.address}`
+    `ERC2771Forwarder: ${forwarder.address}\nRegistry: ${registry.address}`
   )
 }
 

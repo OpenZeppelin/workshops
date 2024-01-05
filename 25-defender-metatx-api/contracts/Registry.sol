@@ -2,7 +2,7 @@
 pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/metatx/ERC2771Context.sol";
-import "@openzeppelin/contracts/metatx/MinimalForwarder.sol";
+import "@openzeppelin/contracts/metatx/ERC2771Forwarder.sol";
 
 contract Registry is ERC2771Context {  
   event Registered(address indexed who, string name);
@@ -10,7 +10,7 @@ contract Registry is ERC2771Context {
   mapping(address => string) public names;
   mapping(string => address) public owners;
 
-  constructor(MinimalForwarder forwarder) // Initialize trusted forwarder
+  constructor(ERC2771Forwarder forwarder) // Initialize trusted forwarder
     ERC2771Context(address(forwarder)) {
   }
 
