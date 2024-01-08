@@ -1,14 +1,14 @@
 const { expect } = require("chai").use(require('chai-as-promised'));
 const { ethers } = require("hardhat");
 const { signMetaTxRequest } = require("../../src/signer");
-const { relay } = require('../../actions/relay');
+const { relay } = require('../../action');
 
 async function deploy(name, ...params) {
   const Contract = await ethers.getContractFactory(name);
   return await Contract.deploy(...params).then(f => f.deployed());
 }
 
-describe("actions/relay", function() {
+describe("action", function() {
   beforeEach(async function() {
     this.forwarder = await deploy('ERC2771Forwarder');
     this.registry = await deploy("Registry", this.forwarder.address);    

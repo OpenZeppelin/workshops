@@ -4,9 +4,9 @@ import json from '@rollup/plugin-json';
 import builtins from 'builtin-modules';
 
 export default {
-  input: 'actions/relay/index.js',
+  input: 'action/index.js',
   output: {
-    file: 'build/relay/index.js',
+    file: 'build/action/index.js',
     format: 'cjs',
     exports: 'auto',
   },

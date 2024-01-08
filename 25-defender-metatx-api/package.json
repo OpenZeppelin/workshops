@@ -19,6 +19,7 @@
     "relay": "node scripts/relay.js",
     "test": "NODE_ENV=test hardhat test"
   },
+  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",

@@ -10,7 +10,7 @@ async function main() {
 
   const { actionId } = await client.create({
     name: "Relay MetaTx",
-    encodedZippedCode: await client.getEncodedZippedCodeFromFolder('./build/relay'),
+    encodedZippedCode: await client.getEncodedZippedCodeFromFolder('./build/action'),
     relayerId: relayerId,
     trigger: {
       type: 'webhook'
