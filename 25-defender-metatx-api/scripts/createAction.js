@@ -1,27 +1,30 @@
-const { AutotaskClient } = require('defender-autotask-client');
+require('dotenv').config();
+
+const { Defender } = require('@openzeppelin/defender-sdk');
 const {readFileSync, appendFileSync} = require('fs');
 
 async function main() {
-  require('dotenv').config();
-  const {relayer: {relayerId}} = JSON.parse(readFileSync('./relay.json'))
-  const { API_KEY: apiKey, API_SECRET: apiSecret } = process.env;
-  const client = new AutotaskClient({ apiKey, apiSecret });
-  const {autotaskId } = await client.create({
-    name: "Relay MetaTX",
+  const { relayer: {relayerId}} = JSON.parse(readFileSync('./relayer.json'))
+  const creds = { apiKey: process.env.API_KEY, apiSecret: process.env.API_SECRET };
+  const client = new Defender(creds);
+
+  const { actionId } = await client.create({
+    name: "Relay MetaTx",
     encodedZippedCode: await client.getEncodedZippedCodeFromFolder('./build/relay'),
-    relayerId: relayerId, 
+    relayerId: relayerId,
     trigger: {
       type: 'webhook'
     },
     paused: false
   });
-  console.log("Autotask created with ID ", autotaskId);
-  appendFileSync('.env', `\nAUTOTASK_ID="${autotaskId}"`, function (err) {
+
+  console.log("Action created with ID ", actionId);
+
+  appendFileSync('.env', `\nACTION_ID="${actionId}"`, function (err) {
     if (err) throw err;
  });
 }
 
 if (require.main === module) {
-  main().then(() => process.exit(0))
-    .catch(error => { console.error(error); process.exit(1); });
+  main().catch(console.error);
 }

@@ -33,15 +33,14 @@
     "chai": "^5.0.0",
     "chai-as-promised": "^7.1.1",
     "create-react-app": "^5.0.1",
-    "defender-autotask-client": "^1.25.0",
-    "defender-relay-client": "^1.26.1",
     "dotenv": "^16.3.1",
     "ethereum-waffle": "^4.0.10",
-    "ethers": "^6.9.2",
+    "ethers": "^5.7.2",
     "hardhat": "^2.0.8",
     "rollup": "^4.9.2"
   },
   "dependencies": {
+    "@openzeppelin/defender-sdk": "^1.8.0",
     "eth-sig-util": "^3.0.1"
   }
 }
