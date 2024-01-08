@@ -33,7 +33,8 @@ export async function registerName(registry, provider, name) {
   await window.ethereum.enable();
   const userProvider = new ethers.BrowserProvider(window.ethereum);
   const userNetwork = await userProvider.getNetwork();
-  if (userNetwork.chainId !== 5) throw new Error(`Please switch to Sepolia for signing`);
+  console.log(userNetwork)
+  if (userNetwork.chainId !== 11155111) throw new Error(`Please switch to Sepolia for signing`);
 
   const signer = userProvider.getSigner();
   const from = await signer.getAddress();
