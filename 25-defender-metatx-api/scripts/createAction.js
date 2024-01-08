@@ -4,7 +4,7 @@ const {readFileSync, appendFileSync} = require('fs');
 async function main() {
   require('dotenv').config();
   const {relayer: {relayerId}} = JSON.parse(readFileSync('./relay.json'))
-  const { TEAM_API_KEY: apiKey, TEAM_API_SECRET: apiSecret } = process.env;
+  const { API_KEY: apiKey, API_SECRET: apiSecret } = process.env;
   const client = new AutotaskClient({ apiKey, apiSecret });
   const {autotaskId } = await client.create({
     name: "Relay MetaTX",

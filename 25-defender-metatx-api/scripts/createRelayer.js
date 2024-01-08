@@ -3,7 +3,7 @@ const { appendFileSync, writeFileSync} = require('fs');
 
 async function run() {
   require('dotenv').config();
-  const { TEAM_API_KEY: apiKey, TEAM_API_SECRET: apiSecret} = process.env;
+  const { API_KEY: apiKey, API_SECRET: apiSecret} = process.env;
   const relayClient = new RelayClient({ apiKey, apiSecret });
 
   // create relay using defender client
