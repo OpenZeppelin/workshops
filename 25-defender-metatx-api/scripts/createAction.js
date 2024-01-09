@@ -8,9 +8,9 @@ async function main() {
   const creds = { apiKey: process.env.API_KEY, apiSecret: process.env.API_SECRET };
   const client = new Defender(creds);
 
-  const { actionId } = await client.create({
+  const { actionId } = await client.action.create({
     name: "Relay MetaTx",
-    encodedZippedCode: await client.getEncodedZippedCodeFromFolder('./build/action'),
+    encodedZippedCode: await client.action.getEncodedZippedCodeFromFolder('./build/action'),
     relayerId: relayerId,
     trigger: {
       type: 'webhook'
@@ -18,7 +18,7 @@ async function main() {
     paused: false
   });
 
-  console.log("Action created with ID ", actionId);
+  console.log("Action created with ID", actionId);
 
   appendFileSync('.env', `\nACTION_ID="${actionId}"`, function (err) {
     if (err) throw err;

@@ -4,7 +4,7 @@ import json from '@rollup/plugin-json';
 import builtins from 'builtin-modules';
 
 export default {
-  input: 'action/index.js',
+  input: 'action/index.mjs',
   output: {
     file: 'build/action/index.js',
     format: 'cjs',
