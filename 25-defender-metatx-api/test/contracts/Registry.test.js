@@ -9,7 +9,7 @@ async function deploy(name, ...params) {
 
 describe("contracts/Registry", function() {
   beforeEach(async function() {
-    this.forwarder = await deploy('MinimalForwarder');
+    this.forwarder = await deploy('ERC2771Forwarder');
     this.registry = await deploy("Registry", this.forwarder.address);    
     this.accounts = await ethers.getSigners();
   });

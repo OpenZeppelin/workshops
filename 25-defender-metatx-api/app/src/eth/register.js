@@ -31,9 +31,10 @@ export async function registerName(registry, provider, name) {
   if (!window.ethereum) throw new Error(`User wallet not found`);
 
   await window.ethereum.enable();
-  const userProvider = new ethers.providers.Web3Provider(window.ethereum);
+  const userProvider = new ethers.BrowserProvider(window.ethereum);
   const userNetwork = await userProvider.getNetwork();
-  if (userNetwork.chainId !== 5) throw new Error(`Please switch to Goerli for signing`);
+  console.log(userNetwork)
+  if (userNetwork.chainId !== 11155111) throw new Error(`Please switch to Sepolia for signing`);
 
   const signer = userProvider.getSigner();
   const from = await signer.getAddress();

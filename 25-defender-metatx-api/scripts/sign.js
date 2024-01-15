@@ -11,7 +11,7 @@ function getInstance(name) {
 }
 
 async function main() {
-  const forwarder = await getInstance('MinimalForwarder');
+  const forwarder = await getInstance('ERC2771Forwarder');
   const registry = await getInstance("Registry");
 
   const { NAME: name, PRIVATE_KEY: signer } = process.env;
@@ -28,6 +28,5 @@ async function main() {
 }
 
 if (require.main === module) {
-  main().then(() => process.exit(0))
-    .catch(error => { console.error(error); process.exit(1); });
+  main().catch(console.error);
 }

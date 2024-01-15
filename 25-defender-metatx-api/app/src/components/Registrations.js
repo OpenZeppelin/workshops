@@ -15,6 +15,8 @@ function Registrations() {
 
   useEffect(() => {
     const filter = registry.filters.Registered();
+    const startBlock = 0;
+    const endBlock = 5022578;
 
     const listener = (...args) => {
       const event = args[args.length-1];
@@ -22,7 +24,15 @@ function Registrations() {
     };
     
     const subscribe = async() => {  
-      const past = await registry.queryFilter(filter);
+      const past = [];
+
+      for(let i = startBlock; i < endBlock; i += 50000) {
+        const _startBlock = i;
+        const _endBlock = Math.min(endBlock, i + 49999);
+        const events = await registry.queryFilter(filter, _startBlock, _endBlock);
+        past = [...past, ...events]
+      }
+
       setRegistrations((past.reverse() || []).map(mapEvent));
       registry.on(filter, listener);  
     }

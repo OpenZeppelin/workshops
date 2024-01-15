@@ -14,13 +14,13 @@ task("accounts", "Prints the list of accounts", async () => {
  * @type import('hardhat/config').HardhatUserConfig
  */
 module.exports = {
-  solidity: "0.8.0",
+  solidity: "0.8.21",
   networks: {
     local: {
       url: 'http://localhost:8545'
     },
-    goerli: {
-      url: 'https://rpc.goerli.mudit.blog',
+    sepolia: {
+      url: 'https://ethereum-sepolia.publicnode.com',
       accounts: [process.env.PRIVATE_KEY],
     },
 

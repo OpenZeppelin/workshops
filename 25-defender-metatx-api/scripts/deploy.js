@@ -1,36 +1,32 @@
-const {
-  DefenderRelayProvider,
-  DefenderRelaySigner,
-} = require('defender-relay-client/lib/ethers')
+require('dotenv').config();
+
+const { Defender } = require('@openzeppelin/defender-sdk');
 const { ethers } = require('hardhat')
 const { writeFileSync } = require('fs')
 
 async function main() {
-  require('dotenv').config()
-  const credentials = {
-    apiKey: process.env.RELAYER_API_KEY,
-    apiSecret: process.env.RELAYER_API_SECRET,
-  }
-  const provider = new DefenderRelayProvider(credentials)
-  const relaySigner = new DefenderRelaySigner(credentials, provider, {
-    speed: 'fast',
-  })
+  const creds = {
+    relayerApiKey: process.env.RELAYER_API_KEY,
+    relayerApiSecret: process.env.RELAYER_API_SECRET,
+  };
+  const client = new Defender(creds);
 
-  const Forwarder = await ethers.getContractFactory('MinimalForwarder')
-  const forwarder = await Forwarder.connect(relaySigner)
-    .deploy()
+  const provider = client.relaySigner.getProvider();
+  const signer = client.relaySigner.getSigner(provider, { speed: 'fast' });
+
+  const forwarderFactory = await ethers.getContractFactory('ERC2771Forwarder', signer)
+  const forwarder = await forwarderFactory.deploy('ERC2771Forwarder')
     .then((f) => f.deployed())
 
-  const Registry = await ethers.getContractFactory('Registry')
-  const registry = await Registry.connect(relaySigner)
-    .deploy(forwarder.address)
+  const registryFactory = await ethers.getContractFactory('Registry', signer)
+  const registry = await registryFactory.deploy(forwarder.address)
     .then((f) => f.deployed())
 
   writeFileSync(
     'deploy.json',
     JSON.stringify(
       {
-        MinimalForwarder: forwarder.address,
+        ERC2771Forwarder: forwarder.address,
         Registry: registry.address,
       },
       null,
@@ -39,15 +35,10 @@ async function main() {
   )
 
   console.log(
-    `MinimalForwarder: ${forwarder.address}\nRegistry: ${registry.address}`
+    `ERC2771Forwarder: ${forwarder.address}\nRegistry: ${registry.address}`
   )
 }
 
 if (require.main === module) {
-  main()
-    .then(() => process.exit(0))
-    .catch((error) => {
-      console.error(error)
-      process.exit(1)
-    })
+  main().catch(console.error);
 }
