@@ -3,7 +3,6 @@ const { DefenderRelaySigner, DefenderRelayProvider } = require('defender-relay-c
 
 const { ForwarderAbi } = require('../../src/forwarder');
 const ForwarderAddress = require('../../deploy.json').MinimalForwarder;
-const RegistryAddress = require('../../deploy.json').Registry;
 
 async function relay(forwarder, request, signature, whitelist) {
   // Decide if we want to relay this request based on a whitelist
